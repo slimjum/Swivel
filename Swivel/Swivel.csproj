@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPublishable>False</IsPublishable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="5.8.0-alpha0098">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LIb\LIb.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>E:\Games\Steam\steamapps\common\Total Miner\MonoGame.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StudioForge.BlockWorld">
+      <HintPath>E:\Games\Steam\steamapps\common\Total Miner\StudioForge.BlockWorld.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StudioForge.Engine.Integration">
+      <HintPath>E:\Games\Steam\steamapps\common\Total Miner\StudioForge.Engine.Integration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StudioForge.TotalMiner">
+      <HintPath>E:\Games\Steam\steamapps\common\Total Miner\StudioForge.TotalMiner.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="StudioForge.TotalMiner.API">
+      <HintPath>E:\Games\Steam\steamapps\common\Total Miner\StudioForge.TotalMiner.API.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;C:\Users\Brandon\Documents\My Games\TotalMiner\Mods\Swivel\$(TargetName).dll&quot;&#xD;&#xA;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;E:\Games\Steam\steamapps\common\Total Miner\$(TargetName).dll&quot;" />
+  </Target>
+
+</Project>

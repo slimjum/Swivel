@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Debug": {
+      "commandName": "Executable",
+      "executablePath": "E:\\Games\\Steam\\steamapps\\common\\Total Miner\\StudioForge.TotalMiner.exe",
+      "workingDirectory": "E:\\Games\\Steam\\steamapps\\common\\Total Miner\\"
+    }
+  }
+}

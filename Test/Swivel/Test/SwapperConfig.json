@@ -1,0 +1,69 @@
+{
+  "PackName": "Test",
+  "ActiveSwappers": 7,
+  "swapperFiles": [
+    {
+      "Triggers": [
+        {
+          "Target": "tm",
+          "chance": -1,
+          "Enabled": true
+        },
+        {
+          "Target": "*",
+          "chance": -1,
+          "Enabled": true
+        }
+      ],
+      "path": "\\Video\\Hank trill video 1.xnb",
+      "SwapType": 1,
+      "Enabled": true
+    },
+    {
+      "Triggers": [
+        {
+          "Target": "GoldPiecesUse",
+          "chance": -1,
+          "Enabled": true
+        },
+        {
+          "Target": "PlayerPain",
+          "chance": -1,
+          "Enabled": true
+        }
+      ],
+      "path": "\\Audio\\Effects\\awwfuck.xnb",
+      "SwapType": 4,
+      "Enabled": true
+    },
+    {
+      "Triggers": [
+        {
+          "Target": "GoldPiecesUse",
+          "chance": -1,
+          "Enabled": true
+        },
+        {
+          "Target": "PlayerPain",
+          "chance": -1,
+          "Enabled": true
+        }
+      ],
+      "path": "\\Audio\\Effects\\awwshit.xnb",
+      "SwapType": 4,
+      "Enabled": true
+    },
+    {
+      "Triggers": [
+        {
+          "Target": "*",
+          "chance": -1,
+          "Enabled": true
+        }
+      ],
+      "path": "\\Audio\\Music\\Allegedly.xnb",
+      "SwapType": 2,
+      "Enabled": true
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;C:\Users\Brandon\Documents\My Games\TotalMiner\Mods\Swivel\Tool\$(TargetName).dll&quot;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetName).exe&quot; &quot;C:\Users\Brandon\Documents\My Games\TotalMiner\Mods\Swivel\Tool\$(TargetName).exe&quot;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetName).deps.json&quot; &quot;C:\Users\Brandon\Documents\My Games\TotalMiner\Mods\Swivel\Tool\$(TargetName).deps.json&quot;&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetName).runtimeconfig.json&quot; &quot;C:\Users\Brandon\Documents\My Games\TotalMiner\Mods\Swivel\Tool\$(TargetName).runtimeconfig.json&quot;&#xD;&#xA;&#xD;&#xA;copy /Y &quot;$(TargetDir)Newtonsoft.Json.dll&quot; &quot;C:\Users\Brandon\Documents\My Games\TotalMiner\Mods\Swivel\Tool\Newtonsoft.Json.dll&quot;" />
+  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LIb\LIb.csproj" />
+  </ItemGroup>
+
+</Project>
